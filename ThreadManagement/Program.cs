@@ -13,9 +13,6 @@ namespace ThreadManagement
             var maxConcurrentThreads = 10;
             var allWorkUnits = Enumerable.Range(0, 100).Select(id => new WorkUnit { Id = id }).ToList();
             var threadManager = new ThreadManager();
-            // just a test
-            //threadManager.RunTasksSynchronous(allWorkUnits);
-            
             threadManager.RunAsync(allWorkUnits, maxConcurrentThreads);
             
             Console.WriteLine("Done");
